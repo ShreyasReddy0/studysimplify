@@ -1,12 +1,11 @@
-import Groq from "groq-sdk";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// We use 'as string' to tell TypeScript we've got this handled
-const apiKey = process.env.GROQ_API_KEY as string;
+const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY!);
 
-if (!apiKey) {
-  console.warn("⚠️ GROQ_API_KEY is not set in .env.local");
-}
-
-export const groq = new Groq({
-  apiKey: apiKey,
+export const supabaseModel = genAI.getGenerativeModel({ 
+  model: "gemini-1.5-flash",
+  generationConfig: {
+    maxOutputTokens: 500,
+    temperature: 0.7,
+  }
 });

@@ -21,7 +21,7 @@ export default function ExplanationCard({ topic, explanation }: ExplanationCardP
         </div>
         <div className="mt-8 pt-4 border-t border-gray-50 flex justify-between items-center text-xs text-gray-400">
           <span>Simplified by StudySimplify AI</span>
-          <span className="bg-gray-50 px-2 py-1 rounded">Llama 3.3 70B</span>
+          <span className="bg-gray-50 px-2 py-1 rounded">Gemini 1.5 Flash</span>
         </div>
       </div>
     </div>
